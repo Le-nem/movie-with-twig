@@ -1,0 +1,30 @@
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<title>{{ titre_doc }}</title>
+
+		<meta charset='UTF-8'>
+
+	</head>
+
+	<body>
+
+		<h1>{{ titre_page }}
+			-
+			{{ date }}</h1>
+
+
+		{# afficher les titres et categorie des films #}
+		{% for item in categories  %}
+			<h2>{{ item.0.category }}</h2>
+			<ul>
+				{% for items in item  %}
+					<li>{{ items.title }}</li>
+				{% endfor %}
+			</ul>
+		{% endfor %}
+	</body>
+</html>
